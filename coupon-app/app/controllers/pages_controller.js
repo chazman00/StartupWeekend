@@ -4,7 +4,7 @@ var locomotive = require('locomotive')
 var PagesController = new Controller();
 
 PagesController.home = function() {
-  this.title = 'Locomotive'
+  this.title = 'Coupons, Discounts and more!'
   this.render();
 }
 
