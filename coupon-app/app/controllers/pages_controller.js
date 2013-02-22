@@ -3,7 +3,7 @@ var locomotive = require('locomotive')
 
 var PagesController = new Controller();
 
-PagesController.main = function() {
+PagesController.home = function() {
   this.title = 'Locomotive'
   this.render();
 }

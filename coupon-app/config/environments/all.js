@@ -2,7 +2,7 @@ var express = require('express')
   , poweredBy = require('connect-powered-by')
   , util = require('util')
   , passport = require('passport')
-  , cons = require('consolidate');
+  , cons = require('consolidate');;
 
 module.exports = function() {
   // Warn of version mismatch between global "lcm" binary and local installation
@@ -16,8 +16,7 @@ module.exports = function() {
   this.set('views', __dirname + '/../../app/views');
   this.set('view engine', 'mu');
 
-  // Register EJS as a template engine.
-  //this.engine('ejs', require('ejs').__express);
+  // Register mustache as a template engine.
   this.engine('mu', cons.mustache);
   
   // Override default template extension.  By default, Locomotive finds
@@ -40,9 +39,12 @@ module.exports = function() {
   this.use(poweredBy('Locomotive'));
   this.use(express.logger());
   this.use(express.favicon());
+  this.use(express.cookieParser());
   this.use(express.static(__dirname + '/../../public'));
   this.use(express.bodyParser());
   this.use(express.methodOverride());
+	// Initialize Passport!  Also use passport.session() middleware, to support
+	// persistent login sessions (recommended).
   this.use(passport.initialize());
   this.use(passport.session());
   this.use(this.router);
