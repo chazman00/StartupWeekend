@@ -19,6 +19,11 @@
     <script type="text/javascript" charset="utf-8" src="jq.mobi.js"></script>
     <script type="text/javascript" charset="utf-8" src="./ui/jq.ui.js"></script>
 
+    <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
+    <!--<script>-->
+    <!--jquery.noConflict();-->
+    <!--</script>-->
+
     <script type="text/javascript" language="javascript">
         // This event handler is fired once the AppMobi libraries are ready
         function onDeviceReady() {
@@ -69,6 +74,16 @@
 
         };
         document.addEventListener("appMobi.device.ready", onDeviceReady, false);
+
+        function showHide(id) {
+            $('.panel_area').each(function(){
+                if ($(this).attr('id') == id) {
+                    $(this).show();
+                } else {
+                    $(this).hide();
+                }
+            });
+        };
     </script>
 </head>
 
@@ -76,14 +91,43 @@
 <div id="jQUi"> <!-- this is the main container div.  This way, you can have only part of your app use jqUi -->
     <!-- this is the header div at the top -->
     <div id="header">
+        <h1 id="pageTitle">Flash Promos!</h1>
         <!--<a href="javascript:$.ui.toggleSideMenu()" class="button" style="float:right">Toggle Nav</a>-->
     </div>
     <div id="content">
+        <div title='Flash Promos!' id="main" class="panel" selected="true" data-tab="navbar_home">
+            <h2 onclick='showHide("cat_info")'>Categories</h2>
+            <p class='panel_area' id='cat_info'>Welcome to the kitchen sink demo for jqMobi.  Here you will find samples of how to use the jqMobi libraries.  Please select an option from below.</p>
+
+            <h2 onclick='showHide("fav_info");'>Favorites</h2>
+            <p class='panel_area' id='fav_info' style="display: none;">Welcome to the kitchen sink demo for jqMobi.  Here you will find samples of how to use the jqMobi libraries.  Please select an option from below.</p>
+
+            <h2 onclick='showHide("my_info");'>My Promotions</h2>
+            <p class='panel_area' id='my_info' style="display: none;">Welcome to the kitchen sink demo for jqMobi.  Here you will find samples of how to use the jqMobi libraries.  Please select an option from below.</p>
+
+            <h2 onclick='showHide("area_info");'>Area Promotions</h2>
+            <p class='panel_area' id='area_info' style="display: none;">Welcome to the kitchen sink demo for jqMobi.  Here you will find samples of how to use the jqMobi libraries.  Please select an option from below.</p>
+
+        </div>
+
+
+
+        <!---------------------------------------------->
+
+        <!--<div title="jqMobi" id="jqm" class="panel" data-nav="menu_jqmobi" data-header="testheader">-->
+        <!--&lt;!&ndash; <header><span>This is an inline header in a panel.  Below is an inline footer</span></header>&ndash;&gt;-->
+        <!--<h2 class='expanded' onclick='showHide(this,"jqmobi_info");'>jqMobi</h2>-->
+        <!--<p id='jqmobi_info'>jqMobi is a blazingly fast query selector tool that is optmimized for HTML5 browsers.</p>-->
+
+        <!--<ul>-->
+        <!--<li>whatever</li>-->
+        <!--</ul>-->
+        <!--</div>-->
         <!-- here is where you can add your panels -->
-        <div title='Categories' id="categories" class="panel" selected="true">This is a basic skeleton jqUi sample</div>
-        <div title='Favorites' id="favorites" class="panel" selected="true">This is a basic skeleton jqUi sample</div>
-        <div title='My Promotions' id="mine" class="panel">This is a basic skeleton jqUi sample</div>
-        <div title='Area Promotions' id="main" class="panel">This is a basic skeleton jqUi sample</div>
+        <!--<div title='Categories' id="categories" class="panel"></div>-->
+        <!--<div title='Favorites' id="favorites" class="panel"></div>-->
+        <!--<div title='My Promotions' id="mine" class="panel"></div>-->
+        <!--<div title='Area Promotions' id="main" class="panel"></div>-->
     </div>
     <!-- bottom navbar. Add additional tabs here -->
     <div id="navbar">
