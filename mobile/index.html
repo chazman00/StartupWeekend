@@ -95,7 +95,8 @@
             $('#step1').show();
             $('#step2').hide();
             $('#step3').hide();
-            $('#cat-header').html('Categories');
+            $('#cat-header').html('Categories (29)');
+            $('#promo_image').attr('src', 'images/ad.jpg');
         }
 
         function restaurants() {
@@ -103,25 +104,31 @@
             $('#step2').show();
             $('#step3').hide();
             $('#cat-header').html('Restaurants<a href="javascript:home()" class="button" style="float:right">&lt;&lt; back</a>');
+            $('#promo_image').attr('src', 'images/ad.jpg');
         }
         function restaurant() {
             $('#step1').hide();
             $('#step2').hide();
             $('#step3').show();
-            $('#cat-header').html('Chillis<a href="javascript:fav(\'Chillis\')" class="button" style="float:right">fav!</a><a href="javascript:restaurants()" class="button" style="float:right">&lt;&lt; back</a>');
+            $('#cat-header').html('Chillis<a href="javascript:restaurants()" class="button" style="float:right">&lt;&lt; back</a><a href="javascript:fav(\'Chillis\')" class="button" style="float:right">fav!</a>');
             showHide($('#cat-header'), 'cat_info');
+            $('#promo_image').attr('src', 'images/chilis-survey.jpg')
         }
         function fav(name) {
             $('#fav_info > div > ul').append(
                     '<li><div onclick="restaurant()">' + name + '<span>***</span><span>3 deals</span></div></li>'
             );
+            $('#fav-header').html('Favorites (3)')
             showHide($('#fav-header'), 'fav_info');
         }
+        var saveCount = 0;
         function save(index, name) {
+            saveCount ++;
             $('#my_info > div > ul').append(
-                    '<li><div>' + promos.restaurants.Chillis[index] + ' at ' + name + '<span class="spamtron"><a href="javascript:console.log(\'clicked\')" class="button" style="float:right">redeem</a></span></span></div></li>'
+                    '<li><div>' + promos.restaurants.Chillis[index] + ' at ' + name + '<span class="spamtron"><a href="javascript:$.ui.loadContent(\'redeemPanel\', false, false, \'pop\');" class="button" style="float:right">redeem</a></span></span></div></li>'
             );
             showHide($('#my-header'), 'my_info');
+            $('#my-header').html('Saved Promos (' + saveCount + ')');
         }
         var promos = {
             restaurants: {
@@ -274,7 +281,7 @@
             <div id="ourhead">
                 <h1><img src="images/flash-promo-logo.png" /></h1><div><span>Near Lancaster, PA</span><br/><span>Search <img src="images/magnifier.png"></img></span></div>
             </div>
-            <h2 id="cat-header" class="selected1" onclick='showHide(this, "cat_info")'>Categories</h2>
+            <h2 id="cat-header" class="selected1" onclick='showHide(this, "cat_info")'>Categories (29)</h2>
             <div class='panel_area' id="cat_info">
                 <div id="step1">
                     <ul>
@@ -282,13 +289,13 @@
                             <div onclick="restaurants()">Restaurants<span>6 locations</span><span>10 promos</span></div>
                         </li>
                         <li>
-                            <div>Groceries<span>6 locations</span><span>76 promos</span></div>
+                            <div>Groceries<span>3 locations</span><span>15 promos</span></div>
                         </li>
                         <li>
-                            <div>Shopping<span>19 locations</span><span>98 promos</span></div>
+                            <div>Shopping<span>1 locations</span><span>2 promos</span></div>
                         </li>
                         <li>
-                            <div>Services<span>9 locations</span><span>76 promos</span></div>
+                            <div>Services<span>2 locations</span><span>2 promos</span></div>
                         </li>
                     </ul>
                 </div>
@@ -325,14 +332,14 @@
                     </ul>
                 </div>
             </div>
-            <h2 id="fav-header" onclick='showHide(this, "fav_info");'>Favorites</h2>
+            <h2 id="fav-header" onclick='showHide(this, "fav_info");'>Favorites (0)</h2>
             <div class='panel_area' id="fav_info" style="display: none;">
                 <div>
                     <ul>
                     </ul>
                 </div>
             </div>
-            <h2 id="my-header" onclick='showHide(this, "my_info");'>My Promotions</h2>
+            <h2 id="my-header" onclick='showHide(this, "my_info");'>My Promos (0)</h2>
             <div class='panel_area' id="my_info" style="display: none;">
                 <div>
                     <ul>
@@ -340,11 +347,11 @@
                 </div>
             </div>
 
-            <h2 onclick='showHide(this, "area_info");'>Area Promotions</h2>
+            <h2 onclick='showHide(this, "area_info");'>Area Promos</h2>
             <div class='panel_area' id='area_info' style="display: none;">
               <img src="images/map.jpg"/>
             </div>
-            <img style="width: 317px;" src="images/ad.jpg" />
+            <img id="promo_image" style="width: 317px;" src="images/ad.jpg" />
         </div>
 
 
@@ -369,14 +376,14 @@
     <!-- bottom navbar. Add additional tabs here -->
 
     <!-- this is the default left side nav menu.  If you do not want any, do not include these -->
-    <nav>
+<!--    <nav>
         <div class='title'>Home</div>
         <ul>
             <li class="icon home mini">
                 <a href="#main">Selectors</a>
             </li>
         </ul>
-    </nav>
+    </nav>-->
 </div>
 <script>
     $.ui.removeFooterMenu();
