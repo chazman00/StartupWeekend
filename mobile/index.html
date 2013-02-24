@@ -63,7 +63,6 @@
         document.addEventListener("DOMContentLoaded", init, false);
         $.ui.ready(function () {
             //This function will get executed when $.ui.launch has completed
-            $('#qrcode').append(showQRCode('88FJR402JLN54M0093NLK'));
         });
 
 
@@ -125,7 +124,11 @@
         function save(index, name) {
             saveCount ++;
             $('#my_info > div > ul').append(
+<<<<<<< HEAD
                     '<li><div>' + promos.restaurants.Chillis[index] + ' at ' + name + '<span class="spamtron"><a href="javascript:$.ui.loadContent(\'redeemPanel\', false, false, \'pop\');" class="button" style="float:right">redeem</a></span></span></div></li>'
+=======
+                    '<li><div>' + promos.restaurants.Chillis[index] + ' at ' + name + '<span class="spamtron"><a href="javascript:$(\'#qrcode\').empty().append(showQRCode(\'Flash Promos is the winner\'));$(\'brandLogo\').show();$.ui.loadContent(\'redeemPanel\', false, false, \'pop\');" class="button" style="float:right">redeem</a></span></span></div></li>'
+>>>>>>> More things
             );
             showHide($('#my-header'), 'my_info');
             $('#my-header').html('Saved Promos (' + saveCount + ')');
@@ -200,9 +203,12 @@
             top: 4px;
         }
 
-        #main h2.selected1{
+        #main h2.selected1, #redeemPanel h2.redeemSelected {
             background-color: #d60000;
             color:  white;
+        }
+        #brandLogo {
+        	margin-top: 7px;
         }
         #jQUi .panel_area > div {
             margin: 6px;
@@ -250,7 +256,6 @@
         #jQUi #navbar {
             display: none;
         }
-
     </style>
 </head>
 
@@ -264,18 +269,12 @@
     <div id="content" class="coupon">
         <div id="redeemPanel" class="panel" selected="false">
             <div id="ourhead">
-                <h1>Flash<br/>Promotions</h1>
+                <h1><img src="images/flash-promo-logo.png" /></h1><div><span>Near Lancaster, PA</span><br/><span>Search <img src="images/magnifier.png"></img></span></div>
             </div>
-            <h2 class="selected1">&nbsp;</h2>
+            <h2 class="redeemSelected" style="display: cell; veritical-align: middle;"><img id="brandLogo" src="images/chilis.jpg">&nbsp;</h2>
             <div id="qrcode" style="text-align: center"></div>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ullamcorper volutpat elit, nec sagittis felis molestie consequat. Aenean viverra ultricies odio eget feugiat.</p>
-            <div class="spamtron" style="text-align: center;"><a href="javascript:$.ui.loadContent('main', false, true, 'pop');" class="button">Finished</a></div>
-        </div>
-        <div id="gamePanel" class="panel" selected="false">
-            <div id="ourhead">
-                <h1>Flash<br/>Promotions</h1>
-            </div>
-            <h2 class="selected1">&nbsp;</h2>
+            <div class="spamtron" style="text-align: center;"><a href="javascript:$('brandLogo').hide();$.ui.loadContent('main', false, true, 'pop');" class="button">Finished</a></div>
         </div>
         <div title='Flash Promotions' id="main" class="panel selected" selected="true" data-tab="navbar_home">
             <div id="ourhead">
@@ -321,13 +320,13 @@
                 <div id="step3" style="display: none;">
                     <ul>
                         <li>
-                            <div>Spend $25, get $5<span class="spamtron"><a href="javascript:$.ui.loadContent('redeemPanel', false, false, 'pop');" class="button" style="float:right">redeem</a></span></span><span class="spamtron"><a href="javascript:save(0, 'Chillis')" class="button" style="float:right">save</a></span></div>
+                            <div>Spend $25, get $5<span class="spamtron"><a href="javascript:$('#qrcode').empty().append(showQRCode('Flash Promo is AOK'));$('brandLogo').show();$.ui.loadContent('redeemPanel', false, false, 'pop');" class="button" style="float:right">redeem</a></span><span class="spamtron"><a href="javascript:save(0, 'Chillis')" class="button" style="float:right">save</a></span></div>
                         </li>
                         <li>
-                            <div>Kids eat free Tuesday<span class="spamtron"><a href="javascript:$.ui.loadContent('redeemPanel', false, false, 'pop');" class="button" style="float:right">redeem</a></span><span class="spamtron"><a href="javascript:save(1, 'Chillis')" class="button" style="float:right">save</a></span></div>
+                            <div>Kids eat free Tuesday<span class="spamtron"><a href="javascript:$('#qrcode').empty().append(showQRCode('Vote for Flash Promo'));$('brandLogo').show();$.ui.loadContent('redeemPanel', false, false, 'pop');" class="button" style="float:right">redeem</a></span><span class="spamtron"><a href="javascript:save(1, 'Chillis')" class="button" style="float:right">save</a></span></div>
                         </li>
                         <li>
-                            <div>10% of entrees<span class="spamtron"><a href="javascript:$.ui.loadContent('redeemPanel', false, false, 'pop');" class="button" style="float:right">redeem</a></span></span><span class="spamtron"><a href="javascript:save(2, 'Chillis')" class="button" style="float:right">save</a></span></div>
+                            <div>10% off entrees<span class="spamtron"><a href="javascript:$('#qrcode').empty().append(showQRCode('Flash Promo is the winner!'));$('brandLogo').show();$.ui.loadContent('redeemPanel', false, false, 'pop');" class="button" style="float:right">play</a></span><span class="spamtron"><a href="javascript:save(2, 'Chillis')" class="button" style="float:right">save</a></span></div>
                         </li>
                     </ul>
                 </div>
@@ -373,6 +372,7 @@
         <!--<div title='My Promotions' id="mine" class="panel"></div>-->
         <!--<div title='Area Promotions' id="main" class="panel"></div>-->
     </div>
+<<<<<<< HEAD
     <!-- bottom navbar. Add additional tabs here -->
 
     <!-- this is the default left side nav menu.  If you do not want any, do not include these -->
@@ -384,6 +384,8 @@
             </li>
         </ul>
     </nav>-->
+=======
+>>>>>>> More things
 </div>
 <script>
     $.ui.removeFooterMenu();
