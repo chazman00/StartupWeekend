@@ -96,8 +96,12 @@
         function restaurant() {
             $('#step2').hide();
             $('#step3').show();
-            $('#cat-header').html('Chillies');
+            $('#cat-header').html('Chillies<a href="javascript:console.log(\'clicked\')" class="button" style="float:right">add Chillies to favs</a>');
         }
+        function fav() {
+            showHide($('#my-header'), 'my_info');
+        }
+
     </script>
     <style type="text/css">
         #jQUi ul > li {
@@ -116,7 +120,7 @@
         #jQUi ul > li > div > span > a.button {
             padding: 10px 5px;
             cursor: pointer;
-            line-height: 6px;
+            line-height: 1px;
             top: -9px;
             height: 24px;
         }
@@ -128,10 +132,18 @@
             margin-left: 20px;
         }
 
+        #jQUi ul > li > div > span.spamtron {
+            margin-left: 0px;
+        }
+
         #main h2 {
-            background-color: #d60000;
-            color:  white;
             cursor: pointer;
+        }
+
+        #main h2 > a.button{
+            height: 28px;
+            line-height: 28px;
+            top: 4px;
         }
 
         #main h2.selected1{
@@ -165,6 +177,9 @@
         #jQUi #header {
             display: none;
         }
+        #jQUi #navbar {
+            display: none;
+        }
 
     </style>
 </head>
@@ -177,9 +192,9 @@
 
     </div>
     <div id="content" class="coupon">
-        <div title='Flash Promotions!' id="main" class="panel selected" selected="true" data-tab="navbar_home">
+        <div title='Flash Promotions' id="main" class="panel selected" selected="true" data-tab="navbar_home">
             <div id="ourhead">
-                <h1>Flash<br /> Promotions!</h1>
+                <h1>Flash<br /> Promotions</h1>
             </div>
             <h2 id="cat-header" class="selected1" onclick='showHide(this, "cat_info")'>Categories</h2>
             <div class='panel_area' id="cat_info">
@@ -221,13 +236,13 @@
                 <div id="step3" style="display: none;">
                     <ul>
                         <li>
-                            <div>Spend $25, get $5<span><a href="javascript:console.log('clicked')" class="button" style="float:right">use</a></span></div>
+                            <div>Spend $25, get $5<span class="spamtron"><a href="javascript:console.log('clicked')" class="button" style="float:right">use</a></span></span><span class="spamtron"><a href="javascript:fav()" class="button" style="float:right">save</a></span></div>
                         </li>
                         <li>
-                            <div>Kids eat free Tuesday<span><a href="javascript:console.log('clicked')" class="button" style="float:right">use</a></span></div>
+                            <div>Kids eat free Tuesday<span class="spamtron"><a href="javascript:console.log('clicked')" class="button" style="float:right">use</a></span><span class="spamtron"><a href="javascript:console.log('clicked')" class="button" style="float:right">save</a></span></div>
                         </li>
                         <li>
-                            <div>10% of entrees<span><a href="javascript:console.log('clicked')" class="button" style="float:right">use</a></span></div>
+                            <div>10% of entrees<span class="spamtron"><a href="javascript:console.log('clicked')" class="button" style="float:right">use</a></span></span><span class="spamtron"><a href="javascript:console.log('clicked')" class="button" style="float:right">save</a></span></div>
                         </li>
                     </ul>
                 </div>
@@ -235,11 +250,20 @@
             <h2 onclick='showHide(this, "fav_info");'>Favorites</h2>
             <p class='panel_area' id='fav_info' style="display: none;">Welcome to the kitchen sink demo for jqMobi.  Here you will find samples of how to use the jqMobi libraries.  Please select an option from below.</p>
 
-            <h2 onclick='showHide(this, "my_info");'>My Promotions</h2>
-            <p class='panel_area' id='my_info' style="display: none;">Welcome to the kitchen sink demo for jqMobi.  Here you will find samples of how to use the jqMobi libraries.  Please select an option from below.</p>
+            <h2 id="my-header" onclick='showHide(this, "my_info");'>My Promotions</h2>
+            <div class='panel_area' id="my_info" style="display: none;">
+                <div>
+                    <ul>
+                        <li>
+                            <div>Spend $25, get $5<span class="spamtron"><a href="javascript:console.log('clicked')" class="button" style="float:right">use</a></span></span></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
 
             <h2 onclick='showHide(this, "area_info");'>Area Promotions</h2>
             <p class='panel_area' id='area_info' style="display: none;">Welcome to the kitchen sink demo for jqMobi.  Here you will find samples of how to use the jqMobi libraries.  Please select an option from below.</p>
+            <img src="images/ad.jpg" />
         </div>
 
 
@@ -273,5 +297,8 @@
         </ul>
     </nav>
 </div>
+<script>
+    $.ui.removeFooterMenu();
+</script>
 </body>
 </html>
