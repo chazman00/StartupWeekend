@@ -9,7 +9,6 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <link rel="stylesheet" type="text/css" href="//cdn.app-framework-software.intel.com/themes/icons.css" />
     <link rel="stylesheet" type="text/css" href="jq.ui.css" title="volcano" />
-
     <!-- uncomment for apps
     <script type="text/javascript" charset="utf-8" src="http://localhost:58888/_appMobi/appmobi.js"></script>
     <script type="text/javascript" charset="utf-8" src="http://localhost:58888/_appMobi/xhr.js"></script>
@@ -91,66 +90,22 @@
             });
         }
 
-        function home() {
-            $('#step1').show();
-            $('#step2').hide();
-            $('#step3').hide();
-            $('#cat-header').html('Categories');
-        }
-
         function restaurants() {
             $('#step1').hide();
             $('#step2').show();
-            $('#step3').hide();
-            $('#cat-header').html('Restaurants<a href="javascript:home()" class="button" style="float:right">&lt;&lt; back</a>');
+            $('#cat-header').html('Restaurants');
         }
         function restaurant() {
-            $('#step1').hide();
             $('#step2').hide();
             $('#step3').show();
-            $('#cat-header').html('Chillis<a href="javascript:fav(\'Chillis\')" class="button" style="float:right">fav!</a><a href="javascript:restaurants()" class="button" style="float:right">&lt;&lt; back</a>');
-            showHide($('#cat-header'), 'cat_info');
+            $('#cat-header').html('Chillies<a href="javascript:console.log(\'clicked\')" class="button" style="float:right">add Chillies to favs</a>');
         }
-        function fav(name) {
-            $('#fav_info > div > ul').append(
-                    '<li><div onclick="restaurant()">' + name + '<span>***</span><span>3 deals</span></div></li>'
-            );
-            showHide($('#fav-header'), 'fav_info');
-        }
-        function save(index, name) {
-            $('#my_info > div > ul').append(
-                    '<li><div>' + promos.restaurants.Chillis[index] + ' at ' + name + '<span class="spamtron"><a href="javascript:console.log(\'clicked\')" class="button" style="float:right">redeem</a></span></span></div></li>'
-            );
+        function fav() {
             showHide($('#my-header'), 'my_info');
-        }
-        var promos = {
-            restaurants: {
-                Chillis: [
-                    'Spend $25, get $5',
-                    'Kids eat free Tuesday',
-                    '10% off entrees'
-                ]
-            }
         }
 
     </script>
     <style type="text/css">
-        @font-face {
-            font-family: 'Open Sans';
-            font-style: normal;
-            font-weight: 400;
-            src: local('Open Sans'), local('OpenSans'), url(opensans.woff) format('woff');
-        }
-
-        #jQUi {
-            font-family: 'Open Sans', sans-serif;
-        }
-        #jQUi h1 {
-            font-family: 'Open Sans', sans-serif;
-        }
-        #jQUi h2 {
-            font-family: 'Open Sans', sans-serif;
-        }
         #jQUi ul > li {
             display: block;
             width: 100%;
@@ -193,7 +148,7 @@
             top: 4px;
         }
 
-        #main h2.selected1{
+        #main h2.selected1, #redeemPanel h2.selected1 {
             background-color: #d60000;
             color:  white;
         }
@@ -210,25 +165,9 @@
 
         #ourhead > h1 {
             text-align: left !important;
-            line-height: 19px;
-            width: 50%;
-            float: left;
-        }
-        #ourhead > div {
             padding: 11px;
-            float: right;
-            color: #b4b8af;
-        }
-        #ourhead > div > span {
-            float: right;
-        }
-        #ourhead > div > span:nth-of-type(2) {
-            position: relative;
-            top: 10px;
-        }
-        #ourhead > div > span > img{
-            width: 15px;
-            height: 15px;
+            line-height: 19px;
+
         }
         #ourhead {
             background-image: none;
@@ -243,7 +182,6 @@
         #jQUi #navbar {
             display: none;
         }
-
     </style>
 </head>
 
@@ -268,34 +206,34 @@
             <div id="ourhead">
                 <h1>Flash<br/>Promotions</h1>
             </div>
-            <h2 class="selected1">&nbsp;</h2>
+            <h2 id="cat-header" class="selected1">&nbsp;</h2>
         </div>
         <div title='Flash Promotions' id="main" class="panel selected" selected="true" data-tab="navbar_home">
             <div id="ourhead">
-                <h1><img src="images/flash-promo-logo.png" /></h1><div><span>Near Lancaster, PA</span><br/><span>Search <img src="images/magnifier.png"></img></span></div>
+                <h1>Flash<br />Promotions</h1>
             </div>
             <h2 id="cat-header" class="selected1" onclick='showHide(this, "cat_info")'>Categories</h2>
             <div class='panel_area' id="cat_info">
                 <div id="step1">
                     <ul>
                         <li>
-                            <div onclick="restaurants()">Restaurants<span>6 locations</span><span>10 promos</span></div>
+                            <div onclick="restaurants()">Restaurants<span>29 options</span><span>98 promos</span></div>
                         </li>
                         <li>
-                            <div>Groceries<span>6 locations</span><span>76 promos</span></div>
+                            <div>Groceries<span>6 options</span><span>76 promos</span></div>
                         </li>
                         <li>
-                            <div>Shopping<span>19 locations</span><span>98 promos</span></div>
+                            <div>Shopping<span>19 options</span><span>98 promos</span></div>
                         </li>
                         <li>
-                            <div>Services<span>9 locations</span><span>76 promos</span></div>
+                            <div>Services<span>9 options</span><span>76 promos</span></div>
                         </li>
                     </ul>
                 </div>
                 <div id="step2" style="display: none;">
                     <ul>
                         <li>
-                            <div onclick="restaurant()">Chillis<span>***</span><span>3 deals</span></div>
+                            <div onclick="restaurant()">Chillies<span>***</span><span>1 deal</span></div>
                         </li>
                         <li>
                             <div>Applebees<span>**</span><span>2 deals</span></div>
@@ -314,37 +252,34 @@
                 <div id="step3" style="display: none;">
                     <ul>
                         <li>
-                            <div>Spend $25, get $5<span class="spamtron"><a href="javascript:$.ui.loadContent('redeemPanel', false, false, 'pop');" class="button" style="float:right">redeem</a></span></span><span class="spamtron"><a href="javascript:save(0, 'Chillis')" class="button" style="float:right">save</a></span></div>
+                            <div>Spend $25, get $5<span class="spamtron"><a href="javascript:$.ui.loadContent('redeemPanel', false, false, 'pop');" class="button" style="float:right">use</a></span></span><span class="spamtron"><a href="javascript:fav()" class="button" style="float:right">save</a></span></div>
                         </li>
                         <li>
-                            <div>Kids eat free Tuesday<span class="spamtron"><a href="javascript:$.ui.loadContent('redeemPanel', false, false, 'pop');" class="button" style="float:right">redeem</a></span><span class="spamtron"><a href="javascript:save(1, 'Chillis')" class="button" style="float:right">save</a></span></div>
+                            <div>Kids eat free Tuesday<span class="spamtron"><a href="javascript:$.ui.loadContent('redeemPanel', false, false, 'pop');" class="button" style="float:right">use</a></span><span class="spamtron"><a href="javascript:console.log('clicked')" class="button" style="float:right">save</a></span></div>
                         </li>
                         <li>
-                            <div>10% of entrees<span class="spamtron"><a href="javascript:$.ui.loadContent('redeemPanel', false, false, 'pop');" class="button" style="float:right">redeem</a></span></span><span class="spamtron"><a href="javascript:save(2, 'Chillis')" class="button" style="float:right">save</a></span></div>
+                            <div>10% of entrees<span class="spamtron"><a href="javascript:$.ui.loadContent('redeemPanel', false, false, 'pop');" class="button" style="float:right">use</a></span></span><span class="spamtron"><a href="javascript:console.log('clicked')" class="button" style="float:right">save</a></span></div>
                         </li>
                     </ul>
                 </div>
             </div>
-            <h2 id="fav-header" onclick='showHide(this, "fav_info");'>Favorites</h2>
-            <div class='panel_area' id="fav_info" style="display: none;">
-                <div>
-                    <ul>
-                    </ul>
-                </div>
-            </div>
+            <h2 onclick='showHide(this, "fav_info");'>Favorites</h2>
+            <p class='panel_area' id='fav_info' style="display: none;">Welcome to the kitchen sink demo for jqMobi.  Here you will find samples of how to use the jqMobi libraries.  Please select an option from below.</p>
+
             <h2 id="my-header" onclick='showHide(this, "my_info");'>My Promotions</h2>
             <div class='panel_area' id="my_info" style="display: none;">
                 <div>
                     <ul>
+                        <li>
+                            <div>Spend $25, get $5<span class="spamtron"><a href="javascript:console.log('clicked')" class="button" style="float:right">use</a></span></span></div>
+                        </li>
                     </ul>
                 </div>
             </div>
 
             <h2 onclick='showHide(this, "area_info");'>Area Promotions</h2>
-            <div class='panel_area' id='area_info' style="display: none;">
-              <img src="images/map.jpg"/>
-            </div>
-            <img style="width: 317px;" src="images/ad.jpg" />
+            <p class='panel_area' id='area_info' style="display: none;"><a href="redeem.html">temp</a>Welcome to the kitchen sink demo for jqMobi.  Here you will find samples of how to use the jqMobi libraries.  Please select an option from below.</p>
+            <img src="images/ad.jpg" />
         </div>
 
 
