@@ -5,7 +5,7 @@
     <ignored path="mobile.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="$PROJECT_DIR$/../../appMobi/coupon-app/index.html" changelist="85f26f85-07c1-4492-aa3e-013902305848" time="1361652928238" ignored="false" />
-    <file path="/index.html" changelist="85f26f85-07c1-4492-aa3e-013902305848" time="1361652894352" ignored="false" />
+    <file path="/index.html" changelist="85f26f85-07c1-4492-aa3e-013902305848" time="1361669693837" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,12 +25,13 @@
       <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="161" column="7" selection-start="7334" selection-end="7334" vertical-scroll-proportion="0.95356035">
+            <state line="119" column="19" selection-start="4735" selection-end="4735" vertical-scroll-proportion="0.28387097">
               <folding>
-                <element signature="n#style#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#li#1;n#ul#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#li#2;n#ul#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#li#3;n#ul#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#span#0;n#div#0;n#li#0;n#ul#0;n#div#2;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#span#0;n#div#0;n#li#1;n#ul#0;n#div#2;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#span#0;n#div#0;n#li#2;n#ul#0;n#div#2;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#p#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#p#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#p#2;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -42,11 +43,11 @@
       <file leaf-file-name="jq.ui.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/jq.ui.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="579" column="100" selection-start="15622" selection-end="15622" vertical-scroll-proportion="0.0">
+            <state line="542" column="44" selection-start="14023" selection-end="14023" vertical-scroll-proportion="0.0">
               <folding>
-                <element signature="e#17984#26587#1" expanded="true" />
-                <element signature="e#30864#32971#2" expanded="true" />
-                <element signature="e#40163#40862#2" expanded="true" />
+                <element signature="e#17008#25611#1" expanded="true" />
+                <element signature="e#29818#31925#2" expanded="true" />
+                <element signature="e#38660#39359#2" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -221,23 +222,24 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/jq.ui.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="579" column="100" selection-start="15622" selection-end="15622" vertical-scroll-proportion="0.0">
+        <state line="542" column="44" selection-start="14023" selection-end="14023" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="e#17984#26587#1" expanded="true" />
-            <element signature="e#30864#32971#2" expanded="true" />
-            <element signature="e#40163#40862#2" expanded="true" />
+            <element signature="e#17008#25611#1" expanded="true" />
+            <element signature="e#29818#31925#2" expanded="true" />
+            <element signature="e#38660#39359#2" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="161" column="7" selection-start="7334" selection-end="7334" vertical-scroll-proportion="0.95356035">
+        <state line="119" column="19" selection-start="4735" selection-end="4735" vertical-scroll-proportion="0.28387097">
           <folding>
-            <element signature="n#style#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#1;n#ul#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#2;n#ul#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#3;n#ul#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#span#0;n#div#0;n#li#0;n#ul#0;n#div#2;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#span#0;n#div#0;n#li#1;n#ul#0;n#div#2;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#span#0;n#div#0;n#li#2;n#ul#0;n#div#2;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#2;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
